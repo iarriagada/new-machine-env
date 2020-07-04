@@ -12,3 +12,4 @@ mkdir .vim/colors
 cp $TOP/vimrc .vimrc
 cp $TOP/bashrc .bashrc
 cp $TOP/badwolf.vim .vim/colors/
+source .bashrc
