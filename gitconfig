@@ -33,3 +33,5 @@
     cmd = meld "$LOCAL" "$REMOTE"
 [credential]
 	helper = cache --timeout=3600
+[pager]
+	log = false
