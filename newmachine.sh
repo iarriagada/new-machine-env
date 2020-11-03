@@ -10,6 +10,7 @@ cd ~
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 mkdir .vim/colors
 cp $TOP/vimrc .vimrc
+cp $TOP/gitconfig .gitconfig
 cp $TOP/bashrc .bashrc
 cp $TOP/badwolf.vim .vim/colors/
 source .bashrc

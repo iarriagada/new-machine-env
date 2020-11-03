@@ -1,0 +1,35 @@
+[user]
+	name = Ignacio Arriagada
+	email = iarriagada@gemini.edu
+[core]
+	editor = vim
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[alias]
+	co = checkout
+	ci = commit -m
+	st = status
+	br = branch
+	hst = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[credential]
+	helper = cache --timeout=3600
