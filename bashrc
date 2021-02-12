@@ -9,6 +9,14 @@ if [ -f /gem_base/etc/profile ]; then
     . /gem_base/etc/profile
 fi
 
+if command -v screen ; then
+    screen -ls
+else
+    echo "*****"
+    echo "'screen' cmd is not installed"
+    echo "*****"
+fi
+
 # User specific aliases and functions
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
