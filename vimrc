@@ -47,11 +47,19 @@ set backspace=indent,eol,start
 " show line numbers
 set mouse=n
 
-"set mouse+=a
+"i set mouse+=a
 
-set ttymouse=xterm2
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
 
 set nu
+
+" Wrap around long lines and prevent words from breaking at window limit
+set wrap
+set linebreak
 
 " indent when moving to the next line while writing code
 set autoindent
