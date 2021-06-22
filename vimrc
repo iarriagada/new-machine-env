@@ -20,6 +20,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'python-mode/python-mode'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'
+Plugin 'ap/vim-css-color'
 
 call vundle#end()
 filetype plugin indent on
@@ -83,7 +86,7 @@ set showmatch
 set wildmenu
 
 " enable all Python syntax highlighting features
-let python_highlight_all = 1
+"let python_highlight_all = 1
 
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
