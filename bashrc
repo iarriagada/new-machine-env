@@ -17,6 +17,10 @@ else
     echo "*****"
 fi
 
+if [ "$TERM" = "screen" ]; then
+    export TERM=screen-256color
+fi
+
 # User specific aliases and functions
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
