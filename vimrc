@@ -23,6 +23,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'ap/vim-css-color'
+Plugin 'vim-python/python-syntax'
+Plugin 'hail2u/vim-css-syntax'
 
 call vundle#end()
 filetype plugin indent on
@@ -86,7 +88,7 @@ set showmatch
 set wildmenu
 
 " enable all Python syntax highlighting features
-"let python_highlight_all = 1
+let python_highlight_all = 1
 
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
@@ -107,11 +109,15 @@ let g:pymode_lint_checker = "pyflakes,pep8"
 let g:pymode_lint_on_write = 0
 "no auto fold
 let g:pymode_folding = 0
-" syntax highlighting
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
+" syntax highlighting (let python-syntax take care of highlighting)
+"let g:pymode_syntax = 1
+"let g:pymode_syntax_all = 1
+"let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+"let g:pymode_syntax_space_errors = g:pymode_syntax_all
+let g:pymode_syntax = 0
+let g:pymode_syntax_all = 0
+let g:pymode_syntax_indent_errors = 0 
+let g:pymode_syntax_space_errors = 0
 " Max line length
 let g:pymode_options_max_line_length = 79
 " Run Off (let jedi-vim handle this)
