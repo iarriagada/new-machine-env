@@ -1,6 +1,11 @@
 # .bashrc
 [[ $- == *i* ]] || return
 
+# Enable all auto completion
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -27,6 +32,8 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+alias ls='ls --color=auto'
+alias ll='ls -alF'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias egrep-ioc='egrep -rI --color=auto --exclude-dir={.svn,O.*,bin,*.old,*.new,documentation,tmp} --exclude=*.log'
