@@ -54,6 +54,7 @@ set mouse=n
 
 "i set mouse+=a
 
+" This enables mouse to work until the end of the screen
 if has("mouse_sgr")
     set ttymouse=sgr
 else

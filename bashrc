@@ -15,6 +15,7 @@ if [ -f /gem_base/etc/profile ]; then
     . /gem_base/etc/profile
 fi
 
+# List all the screen sessions available
 if command -v screen ; then
     screen -ls
 else
@@ -23,15 +24,17 @@ else
     echo "*****"
 fi
 
+# Allow .vimrc setting to work inside a screen session
 if [ "$TERM" = "screen" ]; then
     export TERM=screen-256color
 fi
 
-# User specific aliases and functions
+# Show name of active branch on a git tracked directory
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+# User specific aliases and functions
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias grep='grep --color=auto'
@@ -53,3 +56,4 @@ export IOCSTATS=/gem_sw/prod/R3.14.12.4/support/iocStats/3-1-14-1/bin/linux-x86_
 export PS1="\[\033[0;34m\]\u@\h \[\033[0m\]\[\033[32m\]\$PWD\n\[\033[33m\]\$(parse_git_branch)\[\033[00m\]\$ "
 
 #. ~/work/vendor/git/contrib/completion/git-completion.bash
+cd $HOME
