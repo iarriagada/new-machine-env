@@ -51,9 +51,16 @@ alias suppprod='cd /gem_sw/prod/${EPICS_RELEASE}/support'
 export PYTHONPATH=${HOME}/devel/python
 export EPICS_CA_ADDR_LIST=172.16.2.255
 export IOCSTATS=/gem_sw/prod/R3.14.12.4/support/iocStats/3-1-14-1/bin/linux-x86_64/../../op/adl/ioc_stats_rtems.adl
-#source $GEM_ROOT/etc/profile
+
+#This section is to configure the prompt
+export USER_HOSTp='\[\e[0;34m\]\u@\h\[\e[m\] '
+export FULL_DIRp='\[\e[0;32m\]$PWD\[\e[m\]\n'
+export GIT_BRNCHp='\[\e[0;33m\]$(parse_git_branch)\[\e[m\]'
+export ENDp='$ '
 #PS1="\[\`if [[ \$? = "0" ]]; then echo '\e[32m\h\e[0m'; else echo '\e[31m\h\e[0m' ; fi\`:\$PWD\n\$ "
-export PS1="\[\033[0;34m\]\u@\h \[\033[0m\]\[\033[32m\]\$PWD\n\[\033[33m\]\$(parse_git_branch)\[\033[00m\]\$ "
+#export PS1="\[\033[0;34m\]\u@\h \[\033[0m\]\[\033[32m\]\$PWD\n\[\033[33m\]\$(parse_git_branch)\[\033[00m\]\$ "
+export PS1=$USER_HOSTp$FULL_DIRp$GIT_BRNCHp$ENDp
 
 #. ~/work/vendor/git/contrib/completion/git-completion.bash
+#source $GEM_ROOT/etc/profile
 cd $HOME
