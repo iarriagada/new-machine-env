@@ -24,7 +24,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'ap/vim-css-color'
 Plugin 'vim-python/python-syntax'
-Plugin 'hail2u/vim-css-syntax'
+"Plugin 'hail2u/vim-css-syntax'
+Plugin 'wavded/vim-stylus'
 
 call vundle#end()
 filetype plugin indent on
@@ -47,6 +48,8 @@ set cmdheight=1
 
 set backspace=indent,eol,start
 
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 " set shortmess+=c
 
 " show line numbers
