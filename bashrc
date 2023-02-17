@@ -48,7 +48,7 @@ alias suppwork='cd /gem_sw/work/${EPICS_RELEASE}/support'
 alias suppprod='cd /gem_sw/prod/${EPICS_RELEASE}/support' 
 
 #export GEM_ROOT=/gem_sw
-export PYTHONPATH=${HOME}/devel/python
+export PYTHONPATH=${PYTHONPATH}:${HOME}/devel/python
 export EPICS_CA_ADDR_LIST=172.16.2.255
 export IOCSTATS=/gem_sw/prod/R3.14.12.4/support/iocStats/3-1-14-1/bin/linux-x86_64/../../op/adl/ioc_stats_rtems.adl
 
