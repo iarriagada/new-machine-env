@@ -4,13 +4,9 @@
 # * Configures my bash environmente
 # * Sets up my vim ide
 
-
-export TOP=`pwd`
-cd ~
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-mkdir .vim/colors
-cp $TOP/vimrc .vimrc
-cp $TOP/gitconfig .gitconfig
-cp $TOP/bashrc .bashrc
-cp $TOP/badwolf.vim .vim/colors/
-source .bashrc
+git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+cp -r .vim/ $HOME/.
+cp vimrc $HOME/.vimrc
+cp gitconfig $HOME/.gitconfig
+cp bashrc $HOME/.bashrc
+source $HOME/.bashrc
