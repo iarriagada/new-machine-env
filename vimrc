@@ -26,6 +26,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'vim-python/python-syntax'
 "Plugin 'hail2u/vim-css-syntax'
 Plugin 'wavded/vim-stylus'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 filetype plugin indent on
@@ -67,8 +68,7 @@ end
 set nu
 
 " Wrap around long lines and prevent words from breaking at window limit
-set wrap
-set linebreak
+set wrap linebreak
 
 " indent when moving to the next line while writing code
 set autoindent
@@ -123,7 +123,7 @@ let g:pymode_syntax_all = 0
 let g:pymode_syntax_indent_errors = 0 
 let g:pymode_syntax_space_errors = 0
 " Max line length
-let g:pymode_options_max_line_length = 79
+let g:pymode_options_max_line_length = 80
 " Run Off (let jedi-vim handle this)
 let g:pymode_run = 0
 " Rope Off (let jedi-vim handle this)
@@ -140,14 +140,15 @@ set laststatus=2
 nnoremap <leader><space> :nohlsearch<CR>
 nmap <C-l> :PymodeLint<CR>
 
-augroup vimrc_autocmds
-    autocmd!
-    " highlight characters past column 80
-    autocmd FileType python highlight Excess ctermfg=Black ctermbg=LightYellow
-    autocmd FileType python highlight Excess guibg=LightYellow1 guifg=Black
-    autocmd FileType python match Excess /\%80v.*/
-    autocmd FileType python set nowrap
-    augroup END
+""""""auto-pairs""""""
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
+
+set timeout ttimeoutlen=50
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
