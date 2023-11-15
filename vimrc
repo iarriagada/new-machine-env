@@ -97,6 +97,13 @@ let python_highlight_all = 1
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
+" Auto load a file that has changed
+set autoread
+
+""""""""""""""""NerdTree config""""""""""""""""
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
+
 """""""""""Jedi-Vim Config""""""""""
 let g:jedi#force_py_version = 3
 let jedi#popup_on_dot = 0
@@ -154,5 +161,7 @@ nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
+
+map <C-j> cw<C-r>0<ESC>
 
 map <F2> :NERDTreeToggle<CR>
