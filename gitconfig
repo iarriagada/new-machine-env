@@ -25,6 +25,7 @@
 	st = status
 	br = branch
 	hst = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    	adog = log --all --decorate --oneline --graph
 [diff]
     tool = meld
 [difftool]
